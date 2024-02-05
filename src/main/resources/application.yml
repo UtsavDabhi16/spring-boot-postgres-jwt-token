@@ -1,0 +1,22 @@
+server:
+  port: 8001
+
+#spring:
+#  security:
+#    user:
+#      name: jay
+#      password: admin
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_security
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret:
+    key: c3d56c5f9bf484b916adc08f9062a0cdf20b9544df6c073da2ab5466336673fe
