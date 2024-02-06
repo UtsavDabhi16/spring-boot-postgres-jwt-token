@@ -31,10 +31,6 @@ public class UserSecurityDtoService {
         return userRepository.findByEmail(email);
     }
 
-    public UserSecurityDto getById(Integer id) {
-        return userRepository.findById(id).orElse(null);
-    }
-
     public List<UserSecurityDto> getAllUsers() {
         return userRepository.findAll();
     }

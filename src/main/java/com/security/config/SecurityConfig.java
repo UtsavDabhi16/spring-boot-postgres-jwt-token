@@ -22,23 +22,6 @@ public class SecurityConfig {
     @Autowired
     private AuthenticationProvider authenticationProvider;
 
-    /*@Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails normalUser = User
-                .withUsername("jay")
-                .password(passwordEncoder().encode("password"))
-                .roles("NORMAL")
-                .build();
-
-        UserDetails adminUser = User
-                .withUsername("rudani")
-                .password(passwordEncoder().encode("password"))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(normalUser, adminUser);
-    }*/
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -48,10 +31,10 @@ public class SecurityConfig {
                                 auth
                                         .requestMatchers("/home/admin").hasRole("ADMIN")
                                         .requestMatchers("/auth/**", "/home/public").permitAll()
-                                        .requestMatchers("/api/users/add").hasRole("ADMIN")
+/*                                        .requestMatchers("/api/users/add").hasRole("ADMIN")
                                         .requestMatchers("/api/users/update").hasAnyRole("ADMIN", "INTERMEDIATE")
                                         .requestMatchers("/api/users/view", "/normal").hasAnyRole("ADMIN", "USER", "INTERMEDIATE")
-                                        .requestMatchers("/api/delete/{id}").hasRole("ADMIN")
+                                        .requestMatchers("/api/delete/{id}").hasRole("ADMIN")*/
                                         .anyRequest()
                                         .authenticated()
                 )

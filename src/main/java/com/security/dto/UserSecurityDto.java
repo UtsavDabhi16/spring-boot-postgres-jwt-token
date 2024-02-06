@@ -20,11 +20,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserSecurityDto implements UserDetails {
+public class    UserSecurityDto implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(unique = true, nullable = false)
     private String email;
     @Column(nullable = false)
